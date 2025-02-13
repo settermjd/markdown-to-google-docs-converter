@@ -36,6 +36,10 @@
         }
     ],
     "scripts": {
+        "build-frontend": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx @tailwindcss/cli -i ./src/assets/css/styles.css -o ./public/css/styles.css --watch"
+        ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "qa": [
