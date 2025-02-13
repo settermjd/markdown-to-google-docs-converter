@@ -32,17 +32,20 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@github.com:settermjd/mini-mezzio.git"
+            "url": "git@github.com:settermjd/mini-mezzio.git"
         }
     ],
     "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
         "qa": [
             "@cs-check",
             "@test"
         ],
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
-        "serve": "php -S 0.0.0.0:8080 -t ./public",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S 0.0.0.0:8080 -t ./public"
+        ],
         "test": "phpunit --colors=always"
     }
 }
