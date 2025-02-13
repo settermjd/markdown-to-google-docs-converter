@@ -21,6 +21,7 @@
         "asgrim/mini-mezzio": "dev-add-php8.4-support",
         "laminas/laminas-servicemanager": "^4.4",
         "mezzio/mezzio-fastroute": "^3.12",
+        "mezzio/mezzio-twigrenderer": "^2.17",
         "ueberdosis/pandoc": "^0.9.0"
     },
     "require-dev": {
