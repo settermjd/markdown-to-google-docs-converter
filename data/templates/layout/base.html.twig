@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>{% block title %}{% endblock %} - Markdown to OpenOffice Document Converter</title>
+    {% endblock %}
+</head>
+
+<body class="bg-slate-50 text-slate-800 m-5">
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer" class="mx-auto w-5xl text-center my-5 lowercase text-slate-700">
+        {% block footer %}
+        &copy; Copyright 2025 by <a href="https://matthewsetter.com/">Matthew Setter</a>.
+        {% endblock %}
+    </div>
+</body>
+
+</html>

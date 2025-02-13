@@ -1,0 +1,19 @@
+{% extends "@layout/base.html.twig" %}
+
+{% block content %}
+<section class="mx-auto my-auto w-5xl m-5">
+    <h1 class="text-4xl font-bold my-5">Markdown to OpenOffice Document Converter</h1>
+    <form action="/" method="post" enctype="multipart/form-data" name="converter-form">
+        <div class="my-5">
+            <input type="file" name="file" accept=".md,.markdown,text/markdown" multiple="false"
+                placeholder="Pick your Markdown file"
+                class=" text-sm text-stone-500 file:mr-5 file:py-1 file:px-3 file:border-2 file:border-blue-700 file:rounded-md file:font-medium file:bg-stone-100 file:text-stone-700 hover:file:cursor-pointer hover:file:bg-blue-100 hover:file:text-blue-700">
+        </div>
+        <div class="flex flex-row gap-5 my-5">
+            <input type="submit" name="submit" value="Convert to ODT"
+                class="p-3 rounded-md border-2 border-indigo-900 bg-indigo-600 text-white font-semibold hover:cursor-pointer">
+            <a href="/" title="Cancel conversion of the Markdown file" class="underline text-blue-700">cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

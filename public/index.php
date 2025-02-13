@@ -48,13 +48,11 @@ $container = new ServiceManager([
     ]
 ]);
 $router = new FastRouteRouter();
+
 $app = AppFactory::create($container, $router);
 $app->pipe(new RouteMiddleware($router));
 $app->pipe(new DispatchMiddleware());
-$app->get('/hello-world', new class implements RequestHandlerInterface {
-    public function handle(ServerRequestInterface $request): ResponseInterface
-    {
-        return new TextResponse('Hello world!');
-    }
-});
+
+$app->route('/', ConvertMarkdownFileHandler::class, ['get', 'post'], 'convert-markdown');
+
 $app->run();
