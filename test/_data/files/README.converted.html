@@ -1,0 +1,42 @@
+<h1>Markdown to Google Docs Converter</h1>
+<p>This is a small project, based around <a href="https://github.com/asgrim/mini-mezzio">Mini Mezzio</a>, that converts Markdown files to OpenOffice Documents.</p>
+<blockquote>
+<p>[!NOTE]
+The current scope of the project is an interim step towards the ultimate goal of creating a Google Doc from a Markdown file.
+At this stage, I don't want to complicate the process unnecessarily, so am just focusing on the Markdown to ODT stage.</p>
+</blockquote>
+<h2>Requirements</h2>
+<p>To use the application, you'll need the following:</p>
+<ul>
+<li><a href="https://getcomposer.org/">Composer</a> installed globally</li>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
+<li><a href="https://www.php.net/">PHP 8.4</a></li>
+<li><a href="https://pandoc.org/">Pandoc</a></li>
+</ul>
+<h2>Application Overview</h2>
+<p>The application is a small, web-based application that allows the user to upload a Markdown file, which will then be converted to an OpenOffice Document (ODT) file and sent back to the user as a download.</p>
+<h2>Usage</h2>
+<h3>Starting the application</h3>
+<p>To start the application, run the following command:</p>
+<pre><code>```bash
+composer serve
+```
+</code></pre>
+<p>This will launch the application listening on port 8080 using PHP's built-in web server.</p>
+<h3>Stopping the application</h3>
+<p>To stop the application, in the same terminal tab or session that you started it, press <kbd>ctrl</kbd> + <kbd>c</kbd>.</p>
+<h3>Using the application</h3>
+<p>After starting the application, open http://localhost:8080 in your browser of choice.
+It should look like the screenshot below.</p>
+<p>Choose a Markdown file from your local filesystem to upload, and submit the form.
+A few moments later, you should receive an ODT version of the Markdown file as a download.</p>
+<h3>How to generate a new ODT data file</h3>
+<p>Internally, the application escapes both inline and fenced code blocks using `MarkdownConverterService` uses <a href="https://pandoc.org/">Pandoc</a> to convert the uploaded Markdown file to OpenOffice Document format, using a custom style document stored in <em>/data</em>.
+To generate another one, use the following command:</p>
+<pre><code>```bash
+pandoc --output data/templates/custom-styles.odt \
+    --print-default-data-file reference.odt
+```
+</code></pre>
+<p>Then, open <em>data/templates/custom-styles.odt</em> with <a href="https://www.libreoffice.org/">LibreOffice</a> and update the document's styles, not the document itself, to suit your needs.</p>
+<!-- File Links -->

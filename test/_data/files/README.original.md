@@ -40,8 +40,6 @@ To stop the application, in the same terminal tab or session that you started it
 After starting the application, open http://localhost:8080 in your browser of choice.
 It should look like the screenshot below.
 
-![A screenshot of the application's default route, loaded in Firefox.](./docs/images/screenshots/default-route.png)
-
 Choose a Markdown file from your local filesystem to upload, and submit the form.
 A few moments later, you should receive an ODT version of the Markdown file as a download.
 
