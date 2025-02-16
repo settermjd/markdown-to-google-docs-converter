@@ -43,6 +43,8 @@ It should look like the screenshot below.
 ![A screenshot of the application's default route, loaded in Firefox.](./docs/images/screenshots/default-route.png)
 
 Choose a Markdown file from your local filesystem to upload, and submit the form.
+If the Markdown file contains images, the images source must point to a publicly available image on the internet, or you need to upload a compressed archive containing the Markdown file and the images.
+
 A few moments later, you should receive an ODT version of the Markdown file as a download.
 
 ### How to generate a new ODT data file
