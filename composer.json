@@ -47,12 +47,14 @@
         "cs-fix": "phpcbf",
         "qa": [
             "@cs-check",
+            "@static-analysis",
             "@test"
         ],
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "php -S 0.0.0.0:8080 -t ./public"
         ],
+        "static-analysis": "phpstan analyse src test",
         "test": "phpunit --colors=always"
     }
 }
